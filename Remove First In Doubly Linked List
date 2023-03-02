@@ -1,0 +1,10 @@
+Node* removeFirst(Node* head, int s){
+	if (s==0 || s==1){
+		head = NULL ;  
+	}
+	else{
+		head -> next -> pre = NULL ;
+		head = head -> next ; 
+	}
+return head ; 
+}
