@@ -1,0 +1,18 @@
+Node* AddfirstNode(Node* node, int s){
+	        if(s==0){
+	            head = tail = node ;	
+	         }
+	        else{
+		        node -> next = head ; 
+		        head -> pre = node ; 
+		        head = node ; 
+	         }
+	    s++ ;
+	    return head ;
+    }
+
+Node* Addfirst(int val, int s){
+	        Node* newNode = new Node(val) ; 
+	        int len = s ; 
+	        return AddfirstNode(newNode,len) ;
+        }
