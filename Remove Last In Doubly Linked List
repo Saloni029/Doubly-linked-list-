@@ -1,0 +1,14 @@
+Node* removeLast(Node* head){
+	if(head == NULL || head->next == NULL){
+		return 	NULL ; 
+	}
+	else{
+		Node* temp = head ; 
+		while(temp -> next != NULL){
+			temp = temp -> next ; 
+		}
+		tail = temp->pre ; 
+		tail -> next = NULL ; 
+	}
+ return head ;
+}
