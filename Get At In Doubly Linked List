@@ -8,13 +8,13 @@ void getAt(int index,int len){
 	else{int i = 0 ;
 	     while(i != index+1){
 	    	  if(i==index){
-	    		cout << head -> data ; 
-	    		i++ ; 
-			   }
-			  else{
-			  	head = head -> next ;
-			    i++ ;
-			   } 
+	    	     cout << head -> data ; 
+	    	     i++ ; 
+	           }
+		  else{
+		      head = head -> next ;
+		      i++ ;
+		   } 
 	    }
-   }
+      }
 }
