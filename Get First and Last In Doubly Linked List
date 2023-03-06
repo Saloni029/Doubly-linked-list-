@@ -5,16 +5,16 @@ void getFirst(Node* head) {
 	  else{
             cout << "First element:" << head -> data << endl ;       		  	
 	  }
- }
+    }
  
- void getLast(Node* head){
- 	if(head == NULL){
- 	    cout<<"No element in ll" ;
-	  }
-	  else{
-	      while(head->next != NULL){
- 	 	    head = head -> next ;
-	      }
-              cout << "Last element:" << head -> data ;	
-	  }       	
+void getLast(Node* head){
+       if(head == NULL){
+ 	   cout<<"No element in ll" ;
+        }
+	else{
+	     while(head->next != NULL){
+ 	 	   head = head -> next ;
+	     }
+             cout << "Last element:" << head -> data ;	
+	}       	
  }
