@@ -1,29 +1,29 @@
 Node* removeAt(int index,int len){
-    Node* temp = head ; 
-	if(len==0){
-    cout<<"List is empty" ;
-	}
-	else if(index > len || index<0){
- 		cout << "Index is invalid" << endl ; 
-	}
-	else{
-		int i = 0 ;
+      Node* temp = head ; 
+      if(len==0){
+           cout<<"List is empty" ;
+       }
+       else if(index > len || index<0){
+ 	      cout << "Index is invalid" << endl ; 
+       }
+       else{
+	     int i = 0 ;
 	     while(i != index+1){
-	    	  if(i==index){
-	    	  	Node* back=temp->pre ; 
-	    	    Node* forw=temp->next ; 
-	    	    back -> next = forw ;
-	    	    forw -> pre = back ;
-	    	    temp -> pre = NULL ; 
-	    	    temp -> next = NULL ; 
-	    		len-- ; 
-	    		i++ ; 
-				 }
-			  else{
-			  	temp = temp -> next ;
-			    i++ ;
-			   } 
-      }
-   }
+	    	   if(i==index){
+	    	     Node* back=temp->pre ; 
+	    	     Node* forw=temp->next ; 
+	    	     back -> next = forw ;
+	    	     forw -> pre = back ;
+	    	     temp -> pre = NULL ; 
+	    	     temp -> next = NULL ; 
+	    	     len-- ; 
+	    	     i++ ; 
+		   }
+		   else{
+			temp = temp -> next ;
+			i++ ;
+	            } 
+              }
+        }
 return head ; 
 }
