@@ -1,42 +1,41 @@
 Node* removeBeforeNode(int index,int len){
-  Node* temp = head ; 
-  Node* temp1 = NULL ; 
+        Node* temp = head ; 
 	Node* ref_Node=NULL ; 
 	if(len==0){
-    	cout<<"List is empty" ;
-    	head = NULL ; 
+    	     cout<<"List is empty" ;
+    	     head = NULL ; 
 	}
 	else if(index > len || index<0){
  		cout << "Index is invalid" << endl ; 
  		head = NULL ; 
 	}
 	else{
-		   int i = 0 ;
+             int i = 0 ;
 	     while(i != index+1){
 	    	  if(i==index){
-	    	  	ref_Node = temp ;
-	    		i++ ; 
-				  }
-			  else{
-			  	temp = temp -> next ;
-			    i++ ;
-			    } 
-        }
-        Node* new_ref = ref_Node -> pre ;
-        Node* back=new_ref->pre ; 
+	    	      ref_Node = temp ;
+	    	      i++ ; 
+		   }
+		   else{
+		       temp = temp -> next ;
+		       i++ ;
+	            } 
+              }
+              Node* new_ref = ref_Node -> pre ;
+              Node* back=new_ref->pre ; 
 	      if(back==NULL){
-	    	head = ref_Node ; 
-	    	ref_Node->pre = NULL ; 
-	    	new_ref->next= NULL ; 
-	    	len -- ; 
-		    }
-	      else{
-	        back -> next = ref_Node ; 
-			    ref_Node -> pre = back ; 
-			    new_ref -> next = NULL ;
-			    new_ref -> pre = NULL ;        
-	        len-- ; 	
-		    }
-     }
+	    	 head = ref_Node ; 
+	    	 ref_Node->pre = NULL ; 
+	    	 new_ref->next= NULL ; 
+	    	 len -- ; 
+	       }
+	       else{
+	           back -> next = ref_Node ; 
+	           ref_Node -> pre = back ; 
+		   new_ref -> next = NULL ;
+	           new_ref -> pre = NULL ;        
+	           len-- ; 	
+	       }
+          }
 return head ; 
 }
