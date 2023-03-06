@@ -1,0 +1,43 @@
+Node* removeAfterNode(int index,int len){
+  Node* temp = head ; 
+  Node* temp1 = NULL ; 
+	Node* ref_Node=NULL ; 
+	if(len==0){
+    	cout<<"List is empty" ;
+    	head = NULL ; 
+	}
+	else if(index > len || index<0){
+ 		cout << "Index is invalid" << endl ; 
+ 		head = NULL ; 
+	}
+	else{
+		int i = 0 ;
+	     while(i != index+1){
+	    	  if(i==index){
+	    	  	ref_Node = temp ;
+	    		i++ ; 
+				}
+			  else{
+			  	temp = temp -> next ;
+			    i++ ;
+			  } 
+        }
+      Node* new_ref = ref_Node -> next ;
+      Node* back=new_ref->pre ; 
+	    Node* forw=new_ref->next ; 
+	    if(new_ref->next==NULL){
+	    	tail = ref_Node ; 
+	    	back = NULL ; 
+	    	ref_Node->next= NULL ; 
+	    	len -- ; 
+		  }
+	    else{
+	        ref_Node -> next = forw ; 
+			forw -> pre = ref_Node ; 
+			forw = NULL ;
+			back = NULL ;        
+	        len-- ; 	
+		}
+  }
+return head ; 
+}
