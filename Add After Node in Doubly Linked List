@@ -1,0 +1,35 @@
+Node* addAtAfter(int index,int data,int len){
+    Node* ref_Node = NULL ;
+    Node* temp = head ;
+	Node* newNode = new Node(data);
+	if(len==0){
+    	cout<<"List is empty" ;
+	}
+	else{int i = 0 ;
+	     while(i != index+1){
+	    	  if(i==index){
+	    	    ref_Node = temp ;
+	    	    i++ ; 
+			    }
+			  else{
+			  	temp = temp -> next ;
+			    i++ ;
+			    } 
+       }
+       
+	    if(ref_Node -> next  == NULL){
+	       	ref_Node -> next  = newNode ; 
+	       	newNode -> pre = ref_Node ; 
+	       	tail = newNode ; 
+	       	len ++ ; 
+		   }
+		else{
+			newNode -> next = ref_Node -> next ; 
+			ref_Node -> next  = newNode ; 
+			ref_Node -> next -> pre = newNode ; 
+			newNode -> pre = ref_Node ; 
+			len ++ ; 
+		   }
+    }
+return head ; 
+}
