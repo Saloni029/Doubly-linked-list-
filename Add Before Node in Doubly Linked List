@@ -1,35 +1,36 @@
 Node* addAtbefore(int index,int data,int len){
-    Node* ref_Node = NULL ;
-    Node* temp = head ;
+        Node* ref_Node = NULL ;
+        Node* temp = head ;
 	Node* newNode = new Node(data);
 	if(len==0){
-    	cout<<"List is empty" ;
+    	   cout<<"List is empty" ;
 	}
-	else{int i = 0 ;
-		while(i != index+1){
-	    	if(i==index){
-	    	   ref_Node = temp ;
-	    	   i++ ; 
-			}
-			else{
-			   temp = temp -> next ;
-			   i++ ;
-			} 
-        }	
-		Node* back = ref_Node -> pre ;
+	else{   
+	     int i = 0 ;
+             while(i != index+1){
+	           if(i==index){
+	    	      ref_Node = temp ;
+	    	      i++ ; 
+	           }
+	           else{
+			temp = temp -> next ;
+			i++ ;
+		   } 
+             }	
+	    Node* back = ref_Node -> pre ;
 	    if(back == NULL){
-	       	newNode -> next = ref_Node ;
-	       	back = newNode ; 
-	       	head = newNode ; 
-	       	len++ ; 
-		   }
-		else{
-			back -> next = newNode ; 
-			newNode->next = ref_Node ;
-			newNode->pre = back ; 
-			back = newNode ; 
-			len ++ ; 
-		   }
-    }
+	       newNode -> next = ref_Node ;
+	       back = newNode ; 
+	       head = newNode ; 
+	       len++ ; 
+              }
+	     else{
+	          back -> next = newNode ; 
+                  newNode->next = ref_Node ;
+		  newNode->pre = back ; 
+		  back = newNode ; 
+		  len ++ ; 
+		}
+           }
 return head ; 
 }
