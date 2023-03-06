@@ -1,0 +1,28 @@
+void displayforw(Node* head){
+     cout<< "[" ; 
+     Node* temp= head ; 
+     while(temp != NULL){
+    	   cout << temp -> data ; 
+    	   if(temp -> next != NULL){
+    	      cout << ","	;
+		     }
+    	   temp = temp -> next ;  
+	   }
+     cout<< "]" ;
+}
+
+void displayback(Node* head){
+     cout<< "[" ; 
+     Node* temp= head ; 
+     while(temp->next != NULL){
+    	  temp = temp -> next ;  
+	   }
+	   while(temp != NULL){
+		    cout << temp -> data ; 
+		    if(temp -> pre != NULL){
+    	      cout << ","	;
+		    }
+		    temp = temp -> pre ; 
+	   }
+     cout<< "]" ;
+}
