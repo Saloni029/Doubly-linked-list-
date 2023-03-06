@@ -1,0 +1,45 @@
+Node* removeNode(int index,int len){
+  Node* temp = head ; 
+	Node* ref_Node=NULL ; 
+	if(len==0){
+    	cout<<"List is empty" ;
+    	head = NULL ; 
+	}
+	else if(index > len || index<0){
+ 		cout << "Index is invalid" << endl ;
+ 		head = NULL ; 
+	}
+	else{
+		   int i = 0 ;
+	     while(i != index+1){
+	    	  if(i==index){
+	    	  	ref_Node = temp ;
+	    		  i++ ; 
+				  }
+			  else{
+			  	  temp = temp -> next ;
+			      i++ ;
+			    } 
+        }
+        Node* new_ref = ref_Node -> pre ; 
+	      if(index==0){
+	    	   head = ref_Node->next ; 
+	    	   ref_Node->pre = NULL ; 
+	    	   ref_Node->next= NULL ; 
+	    	   len -- ; 
+		    }
+		    else if(ref_Node -> next == NULL){
+			     new_ref -> next = NULL ; 
+			     ref_Node->next= NULL ;       
+	         len-- ;
+	     	}
+	      else{
+	          new_ref -> next = ref_Node->next ; 
+			      ref_Node -> next -> pre = ref_Node ; 
+		        new_ref = NULL ; 
+	    	    ref_Node->next= NULL ;       
+	          len-- ; 	
+		    }
+    }
+return head ; 
+}
