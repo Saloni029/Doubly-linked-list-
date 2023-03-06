@@ -1,29 +1,31 @@
 Node* addAt(int index,int data,int len){
     Node* temp = head ; 
     Node* newNode = new Node(data);
-	if(len==0){
+    if(len==0){
     	cout<<"List is empty" ;
-	}
-	else if(index > len || index<0){
- 		  cout << "Index is invalid" << endl ; 
-	}
-	else{
-		   int i = 0 ;
-	     while(i != index+1){
-	    	  if(i==index){
-	    	  	Node* back=temp->pre ; 
-	    	    newNode->next = temp ; 
-	    	    temp -> pre = newNode ;
-	    	    newNode -> pre = back ; 
-	    	    back -> next = newNode ; 
-	    		  len++ ; 
-	    		  i++ ; 
-				  }
-			   else{
-			  	  temp = temp -> next ;
-			      i++ ;
-			    } 
+	head = NULL ; 
+    }
+    else if(index > len || index<0){
+          cout << "Index is invalid" << endl ; 
+	  head = NULL ; 
+    }
+    else{
+	  int i = 0 ;
+	  while(i != index+1){
+	       if(i==index){
+	            Node* back=temp->pre ; 
+	            newNode->next = temp ; 
+	            temp -> pre = newNode ;
+	            newNode -> pre = back ; 
+	            back -> next = newNode ; 
+	            len++ ; 
+	            i++ ; 
+	        }
+	        else{
+	            temp = temp -> next ;
+	            i++ ;
+	        } 
+           }
        }
-   }
 return head ; 
 }
