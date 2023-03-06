@@ -1,9 +1,9 @@
 void getAt(int index,int len){
 	if(len == 0){
-		cout << "List is empty" << endl ; 
+	    cout << "List is empty" << endl ; 
 	}
 	else if(index > len ){
- 		cout << "Index out of range" << endl ; 
+ 	    cout << "Index out of range" << endl ; 
 	}
 	else{int i = 0 ;
 	     while(i != index+1){
@@ -15,6 +15,6 @@ void getAt(int index,int len){
 		      head = head -> next ;
 		      i++ ;
 		   } 
-	    }
-      }
+	     }
+        }
 }
